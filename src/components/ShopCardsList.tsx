@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import CardComponent from './CardComponent';
+import CardComponent from './ShopCardComponent';
 import { Box, Typography } from '@mui/material';
 import { useGetShopsQuery } from '../redux/myApi';
 import { useDispatch } from 'react-redux';

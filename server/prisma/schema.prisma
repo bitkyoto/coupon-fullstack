@@ -28,3 +28,9 @@ model Product{
   shopId Int
   shop Shop @relation(fields: [shopId], references: [id])
 }
+
+model User{
+  id Int @default(autoincrement()) @id
+  username String @unique 
+  balance Int?
+}

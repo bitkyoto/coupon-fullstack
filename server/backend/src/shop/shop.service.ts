@@ -19,6 +19,12 @@ export class ShopService {
     });
   }
 
+  async findProducts(id: number){
+    return this.databaseService.product.findMany({
+      where: {shopId: id}
+    })
+
+  }
   async update(id: number, updateShopDto: Prisma.ShopUpdateInput) {
     return this.databaseService.shop.update({
       where: {id},

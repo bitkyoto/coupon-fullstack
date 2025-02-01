@@ -21,6 +21,11 @@ export class ShopController {
     return this.shopService.findOne(+id);
   }
 
+  @Get(':id/items')
+  findProducts(@Param('id') id: string){
+    return this.shopService.findProducts(+id)
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateShopDto: Prisma.ShopUpdateInput) {
     return this.shopService.update(+id, updateShopDto);

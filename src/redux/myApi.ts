@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Shop } from "../types/Shop";
+import { Product, Shop } from "../types/Shop";
 
 export const myApi = createApi({
     reducerPath: 'shopApi',
@@ -9,8 +9,11 @@ export const myApi = createApi({
     endpoints: (builder) => ({
         getShops: builder.query<Shop[], void>({
             query: () => 'shop' // Путь к ресурсу относительно baseUrl
+        }),
+        getItemsOfShop: builder.query<Product[], string>({
+            query: (id) => `shop/${id}/items`
         })
     })
 })
 
-export const { useGetShopsQuery } = myApi;
+export const { useGetShopsQuery, useGetItemsOfShopQuery } = myApi;
