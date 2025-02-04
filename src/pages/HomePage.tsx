@@ -10,8 +10,10 @@ export default function HomePage() {
     <>
         <Header />
         <Container>
-            <CardsList/>
             <AboutComponent/>
+            <Box sx={{width: 'auto', display: 'flex', flexWrap: 'wrap', padding: 3, border: '1px solid red', borderRadius: '10px'}}>
+              <CardsList/>
+            </Box>
         </Container>
     </>
   )

@@ -4,7 +4,7 @@ import React from 'react'
 export default function AboutComponent() {
   return (
     <>
-        <Box sx={{display: 'flex', flexDirection: 'column', width: '100%', borderColor: 'red', border: '1px solid red', borderRadius: '10px', mb:4}}>
+        <Box sx={{display: 'flex', flexDirection: 'column', width: '100%', borderColor: 'red', border: '1px solid red', borderRadius: '10px', mb:3}}>
             <Typography variant='h1' sx={{padding: 3}}>
                 Добро пожаловать на наш веб-сайт!
             </Typography>

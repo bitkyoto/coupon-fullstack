@@ -1,4 +1,3 @@
-import React from 'react'
 import ProductCardComponent from './ProductCardComponent'
 import { useParams } from 'react-router-dom'
 import { useGetItemsOfShopQuery } from '../redux/myApi'

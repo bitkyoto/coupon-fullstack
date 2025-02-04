@@ -6,21 +6,21 @@ import { DatabaseService } from 'src/database/database/database.service';
 export class ShopService {
   constructor(private readonly databaseService: DatabaseService){}
   async create(createShopDto: Prisma.ShopCreateInput) {
-    return this.databaseService.shop.create({data: createShopDto});
+    return await this.databaseService.shop.create({data: createShopDto});
   }
 
   async findAll() {
-    return this.databaseService.shop.findMany({});
+    return await this.databaseService.shop.findMany({});
   }
 
   async findOne(id: number) {
-    return this.databaseService.shop.findUnique({
+    return await this.databaseService.shop.findUnique({
       where: {id}
     });
   }
 
   async findProducts(id: number){
-    return this.databaseService.product.findMany({
+    return await this.databaseService.product.findMany({
       where: {shopId: id}
     })
 

@@ -10,8 +10,8 @@ interface ProductCardProps{
 export default function ProductCardComponent({props}: ProductCardProps) {
   return (
     <Card variant='outlined' sx={{bgcolor:'#ff5252', width:'400px'}}>
-        <CardContent sx={{color:' white', fontWeight: 'bold'}}>
-              <Typography variant='h3'>
+        <CardContent sx={{color:' white'}}>
+              <Typography variant='h3' sx={{fontWeight: 'bold'}}>
                   {props.title}
               </Typography>
               <Typography variant='h6' sx={{mb:1}}>
