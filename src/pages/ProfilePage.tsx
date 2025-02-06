@@ -4,6 +4,7 @@ import { Box, Container, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Product } from '../types/Shop';
+import ProductInCartComponent from '../components/ProductInCartComponent';
 
 export default function ProfilePage() {
   const navigate = useNavigate();
@@ -47,9 +48,9 @@ export default function ProfilePage() {
               padding: 3,
             }}
           >
-            <Box sx={{display: 'flex', flexDirection: 'column', justifyContent:'center',alignItems:'center'}}>
-              <Typography variant="h2"> Ваша корзина: </Typography>
-              {products.map((prdct: Product) => (<Typography variant="h5"> {prdct.title} id: {prdct.id} </Typography> ))}
+            <Box sx={{display: 'flex', width: '100%', mx:3, flexDirection: 'column', justifyContent:'center',alignItems:'center'}}>
+              <Typography variant="h2" sx={{mb:1}}> Ваша корзина: </Typography>
+              {products.map((prdct: Product) => (<ProductInCartComponent props={prdct}/>))}
             </Box>
           </Box>
         </Container>
