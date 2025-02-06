@@ -1,12 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { myApi } from './myApi'; // Убедитесь, что путь правильный
+import { shopApi } from './shopApi'; // Убедитесь, что путь правильный
 import shopReducer from './shopSlice';
-
+import authReducer from './authSlice'
+import cartReducer from './cartSlice';
 export const store = configureStore({
     reducer: {
-        [myApi.reducerPath]: myApi.reducer,
-        shops: shopReducer
+        [shopApi.reducerPath]: shopApi.reducer,
+        shopSlice: shopReducer,
+        authSlice: authReducer,
+        cartSlice: cartReducer
+        
     },
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(myApi.middleware),
+        getDefaultMiddleware().concat(shopApi.middleware),
 });

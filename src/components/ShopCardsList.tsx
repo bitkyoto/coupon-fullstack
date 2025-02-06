@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import CardComponent from './ShopCardComponent';
 import { Box, Typography } from '@mui/material';
-import { useGetShopsQuery } from '../redux/myApi';
+import { useGetShopsQuery } from '../redux/shopApi';
 import { useDispatch } from 'react-redux';
 import { setShops } from '../redux/shopSlice';
 
@@ -19,5 +19,6 @@ export default function CardsList() {
                 <CardComponent key={shop.id} props={shop} />
             ))}
         </Box>
+        
     );
 }

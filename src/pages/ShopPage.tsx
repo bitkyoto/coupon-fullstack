@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGetItemsOfShopQuery } from '../redux/myApi'
+import { useGetItemsOfShopQuery } from '../redux/shopApi'
 import { useParams } from 'react-router-dom'
 import Header from '../components/Header'
 import { Container } from '@mui/material'
@@ -11,9 +11,7 @@ export default function ShopPage() {
         <>
             <Header/>
             <Container>
-                <ProductCardList>
-                    
-                </ProductCardList>
+                <ProductCardList/>
             </Container>
         </>
     )

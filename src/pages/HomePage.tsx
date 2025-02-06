@@ -11,7 +11,7 @@ export default function HomePage() {
         <Header />
         <Container>
             <AboutComponent/>
-            <Box sx={{width: 'auto', display: 'flex', flexWrap: 'wrap', padding: 3, border: '1px solid red', borderRadius: '10px'}}>
+            <Box sx={{width: 'auto', display: 'flex', flexWrap: 'wrap', padding: 3, border: '1px solid red', borderRadius: '10px', mb:4}}>
               <CardsList/>
             </Box>
         </Container>

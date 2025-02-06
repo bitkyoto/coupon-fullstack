@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Product, Shop } from "../types/Shop";
 
-export const myApi = createApi({
+export const shopApi = createApi({
     reducerPath: 'shopApi',
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:3000" // Убедитесь, что baseUrl указывает на корневой URL
@@ -16,4 +16,4 @@ export const myApi = createApi({
     })
 })
 
-export const { useGetShopsQuery, useGetItemsOfShopQuery } = myApi;
+export const { useGetShopsQuery, useGetItemsOfShopQuery } = shopApi;

@@ -1,6 +1,6 @@
 import ProductCardComponent from './ProductCardComponent'
 import { useParams } from 'react-router-dom'
-import { useGetItemsOfShopQuery } from '../redux/myApi'
+import { useGetItemsOfShopQuery } from '../redux/shopApi'
 import { Box } from '@mui/material'
 export default function ProductCardList() {
     const {id} = useParams()

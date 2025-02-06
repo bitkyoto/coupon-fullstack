@@ -8,8 +8,8 @@ export default function AboutComponent() {
             <Typography variant='h1' sx={{padding: 3}}>
                 Добро пожаловать на наш веб-сайт!
             </Typography>
-            <Typography variant='body1' sx={{paddingX: 3, mb:3}}>
-                Мы предоставляем услуги по 
+            <Typography sx={{paddingX: 3, mb:3, fontSize: "30px"}}>
+                Мы предоставляем услуги для легкой и комфортной возможности дарения подарков для ваших близких 
             </Typography>
         </Box>
     </>

@@ -10,7 +10,8 @@ export class UserController {
   create(@Body() createUserDto: Prisma.UserCreateInput) {
     return this.userService.createUser(createUserDto);
   }
-
+  
+  @UseGuards(JwtAuthGuard)
   @Get()
   findAll() {
     return this.userService.getAllUsers();

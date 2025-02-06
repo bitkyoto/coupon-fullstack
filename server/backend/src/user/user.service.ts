@@ -19,7 +19,7 @@ export class UserService {
   }
 
   async getUser(id: number) {
-    return this.databaseService.user.findMany({where: {id}})
+    return this.databaseService.user.findUnique({where: {id}})
   }
 
   async updateUser(id: number, updateUserDto: Prisma.UserUpdateInput) {

@@ -5,9 +5,7 @@ export default function LoginPage() {
   return (
     <>
       <Header/>
-      <LoginForm>
-        
-      </LoginForm>
+      <LoginForm/>
     </>
   )
 }
