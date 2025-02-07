@@ -50,7 +50,7 @@ export default function ProfilePage() {
           >
             <Box sx={{display: 'flex', width: '100%', mx:3, flexDirection: 'column', justifyContent:'center',alignItems:'center'}}>
               <Typography variant="h2" sx={{mb:1}}> Ваша корзина: </Typography>
-              {products.map((prdct: Product) => (<ProductInCartComponent props={prdct}/>))}
+              {products.map((prdct: Product) => (<ProductInCartComponent key={prdct.id} props={prdct}/>))}
             </Box>
           </Box>
         </Container>
