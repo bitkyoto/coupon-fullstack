@@ -12,9 +12,14 @@ const filterSlice = createSlice({
         setFilter(state, action){
             state.filter = action.payload
             return state
+        },
+        setInterval(state, action){
+            console.log(action)
+            state.interval = action.payload
+            return state
         }
     }
 })
 
 export default filterSlice.reducer
-export const {setFilter} = filterSlice.actions
+export const {setFilter, setInterval} = filterSlice.actions

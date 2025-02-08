@@ -6,33 +6,38 @@ import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
 export default function ProductCardList() {
-    const { id } = useParams();
-    const { data, error, isLoading } = useGetItemsOfShopQuery(id);
-    const {filter, interval} = useSelector((state) => state.filterSlice);
-    const [filteredData, setFilteredData] = useState([]);
+    const { id } = useParams()
+    const { data, error, isLoading } = useGetItemsOfShopQuery(id)
+    const {filter, interval} = useSelector((state) => state.filterSlice)
+    const [filteredData, setFilteredData] = useState([])
     useEffect(() => {
         if (data) {
-            let sortedData = [...data];
+            let sortedData = [...data]
             switch (filter) {
                 case 'Дороже':
-                    sortedData.sort((a, b) => b.price - a.price);
-                    break;
+                    sortedData.sort((a, b) => b.price - a.price)
+                    break
                 case 'Дешевле':
-                    sortedData.sort((a, b) => a.price - b.price);
+                    sortedData.sort((a, b) => a.price - b.price)
                     break;
                 default:
                     break;
             }
-            setFilteredData(sortedData);
+            if (interval !== '0-1000'){
+                const minValue = interval.split('-')[0] 
+                const maxValue = interval.split('-')[1]
+                sortedData = sortedData.filter((product) => product.price >= minValue && product.price <= maxValue)
+            }
+            setFilteredData(sortedData)
         }
-    }, [data, filter]);
+    }, [data, filter, interval])
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <div>Loading...</div>
     }
 
     if (error) {
-        return <div>Error loading data</div>;
+        return <div>Error loading data</div>
     }
 
     return (
