@@ -3,12 +3,14 @@ import { shopApi } from './shopApi'; // Убедитесь, что путь пр
 import shopReducer from './shopSlice';
 import authReducer from './authSlice'
 import cartReducer from './cartSlice';
+import filterReducer from './filterSlice';
 export const store = configureStore({
     reducer: {
         [shopApi.reducerPath]: shopApi.reducer,
         shopSlice: shopReducer,
         authSlice: authReducer,
-        cartSlice: cartReducer
+        cartSlice: cartReducer,
+        filterSlice: filterReducer,
         
     },
     middleware: (getDefaultMiddleware) =>

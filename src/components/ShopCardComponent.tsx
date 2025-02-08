@@ -7,13 +7,15 @@ import { useNavigate } from 'react-router-dom';
 
 interface CardComponentProps{
   props: Shop
+  index: number
 }
 
 
-export default function CardComponent({props}: CardComponentProps) {
+export default function CardComponent({props, index}: CardComponentProps) {
+  const _bgColor = index % 2 ? '#ff5252' : 'red'
   const navigate = useNavigate()
   return (
-    <Card variant='outlined' sx={{bgcolor:'#ff5252', width:'300px'}}>
+    <Card variant='outlined' sx={{bgcolor: _bgColor, width:'300px', mb: 3}}>
         <CardContent sx={{color:' white'}}>
               <Typography variant='h6'>
                   {props.shopCategory}

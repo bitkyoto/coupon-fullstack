@@ -14,9 +14,9 @@ export default function CardsList() {
 
     if (isLoading) return <Typography variant="h1">LOADING</Typography>;
     return (
-        <Box sx={{ display: 'flex', gap: 4, justifyContent: 'center', flexWrap: 'wrap' }}>
-            {data && data.map((shop) => (
-                <CardComponent key={shop.id} props={shop} />
+        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+            {data && data.map((shop, index) => (
+                <CardComponent key={shop.id} props={shop} index={index} />
             ))}
         </Box>
         

@@ -8,6 +8,7 @@ export interface Shop{
 export interface Product{
     id: number,
     title: string,
+    price: number
     description: string,
     shopId: number
 }

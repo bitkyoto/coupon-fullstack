@@ -1,26 +1,32 @@
 import { Button, Card, CardActions, CardContent, Typography } from '@mui/material'
-import React from 'react'
 import { Product } from '../types/Shop'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../redux/cartSlice'
+
+
 interface ProductCardProps{
     props: Product
+    index: number
 }
 
 
-export default function ProductCardComponent({props}: ProductCardProps) {
+export default function ProductCardComponent({props, index}: ProductCardProps) {
   const dispatch = useDispatch()
   const handleAddToCart = () => {
     dispatch(addToCart(props))
   }
+  const _bgColor = index % 2 ? '#ff5252' : 'red'
   return (
-    <Card variant='outlined' sx={{bgcolor:'#ff5252', width:'400px'}}>
-        <CardContent sx={{color:' white'}}>
+    <Card variant='outlined' sx={{bgcolor:_bgColor}}>
+        <CardContent sx={{display: 'flex', flexDirection: 'column', justifyContent:'space-between', color:' white', wordBreak: 'break-all'}}>
               <Typography variant='h3' sx={{fontWeight: 'bold'}}>
                   {props.title}
               </Typography>
               <Typography variant='h6' sx={{mb:1}}>
                   {props.description}
+              </Typography>
+              <Typography variant='h5' sx={{mb:1, fontWeight:'bold'}}>
+                  {props.price} рублей
               </Typography>
               <CardActions sx={{padding: 0, justifySelf: 'center'}}>
                 <Button 
