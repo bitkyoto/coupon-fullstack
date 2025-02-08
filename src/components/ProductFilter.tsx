@@ -97,7 +97,7 @@ export default function ProductFilterComponent() {
                         onChange={handleMaxPriceChange}
                         sx={
                             { width: 150, '& .MuiOutlinedInput-root': {
-                                '& .Mui-focused fieldset': {
+                                '&.Mui-focused fieldset': {
                                     borderColor: 'red',
                                     color: 'red'
                                     },},
