@@ -69,9 +69,8 @@ export default function ProductFilterComponent() {
                         type="number"
                         value={minPrice}
                         onChange={handleMinPriceChange}
-                        sx={
-                            { width: 150, '& .MuiOutlinedInput-root': {
-                                '& .Mui-focused fieldset': {
+                        sx={{ width: 150, '& .MuiOutlinedInput-root': {
+                                '&.Mui-focused fieldset': {
                                     borderColor: 'red',
                                     color: 'red'
                                 },},
@@ -80,7 +79,7 @@ export default function ProductFilterComponent() {
                                         color: 'red',
                                     },
                                 },
-                                "& :hover:not(.Mui-focused)": {
+                                "&:hover:not(.Mui-focused)": {
                                     "& .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "#ff5252",
                                     },
@@ -107,7 +106,7 @@ export default function ProductFilterComponent() {
                                         color: 'red',
                                     },
                                 },
-                                "& :hover:not(.Mui-focused)": {
+                                "&:hover:not(.Mui-focused)": {
                                     "& .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "#ff5252",
                                     },
