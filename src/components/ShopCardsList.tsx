@@ -16,7 +16,7 @@ export default function CardsList() {
     return (
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'space-around', flexWrap: 'wrap' }}>
             {data && data.map((shop, index) => (
-                <CardComponent key={shop.id} props={shop} index={index} />
+                <CardComponent key={Math.random()} props={shop} index={index} />
             ))}
         </Box>
         
